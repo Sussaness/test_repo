@@ -1,0 +1,18 @@
+CREATE DATABASE EmploymentService;
+GO
+USE EmploymentService;
+GO
+CREATE TABLE Unemployed (
+    Id INT IDENTITY PRIMARY KEY,
+    FullName NVARCHAR(200), RegistrationAddress NVARCHAR(500), Education NVARCHAR(100),
+    WorkExperienceYears FLOAT, HasPreviousJob BIT, LastSalary FLOAT,
+    DesiredMinSalary FLOAT, DesiredEmploymentType NVARCHAR(10),
+    RegistrationDate DATE, BenefitAmount FLOAT
+);
+CREATE TABLE Vacancy (
+    Id INT IDENTITY PRIMARY KEY,
+    CompanyName NVARCHAR(200), Position NVARCHAR(200), Salary FLOAT,
+    RequiredEducation NVARCHAR(100), RequiredWorkExpYears FLOAT
+);
+INSERT INTO Vacancy VALUES ('ООО Рога', 'Программист', 80000, 'высшее', 1);
+INSERT INTO Vacancy VALUES ('Такси', 'Водитель', 40000, 'среднее', 0.5);
